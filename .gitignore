@@ -1,0 +1,7 @@
+*.tmp
+node_modules
+.temp
+.idea
+dist/
+npm-debug.log
+package-lock.json
