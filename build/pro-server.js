@@ -6,9 +6,11 @@ let historyFallback = require('./task/distHistoryFallback.js')
 let config = require('./config/config.js')
 //url访问/的时候固定重定向到portal去
 
-app.get('/', function (req, res) {
-    res.redirect('/portal');
-})
+if(config.apps.length>1){
+    app.get('/', function (req, res) {
+        res.redirect('/portal');
+    })
+}
 
 
 
