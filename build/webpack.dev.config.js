@@ -9,11 +9,7 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const Happypack = require('happypack')
 const config = require('./config/config.js')
-const NotFoudEntryPlugin = require('./plugins/notFoudEntryPlugin.js')
-const MoveAssetsToDirPlugin = require('./plugins/moveAssetsToDirPlugin.js')
-const AddMainDirFilePlugin = require('./plugins/addMainDirFilePlugin.js')
 const AddFavIcoPlugin = require('./plugins/addFavIcoPlugin.js')
-const ProcessChunkPlugin = require('./plugins/processChunkPlugin.js')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 function recursiveIssuer(m) {

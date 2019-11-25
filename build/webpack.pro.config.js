@@ -9,8 +9,6 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const Happypack = require('happypack')
 const config = require('./config/config.js')
-const MoveAssetsToDirPlugin = require('./plugins/moveAssetsToDirPlugin.js')
-const NotFoudEntryPlugin = require('./plugins/notFoudEntryPlugin.js')
 const AddFavIcoPlugin = require('./plugins/addFavIcoPlugin.js')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");//提取css到单独文件的插件
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
@@ -303,8 +301,7 @@ function getExports(project){
                         reduce_vars: true // 提取出出现多次但是没有定义成变量去引用的静态值
                     }
                 }
-            }),
-            //new MoveAssetsToDirPlugin()
+            })
         ])
     }
 }
