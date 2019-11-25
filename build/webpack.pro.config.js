@@ -1,4 +1,6 @@
-
+const config = require('./config/config.js')
+let deleteDist = require('./task/deleteDist')
+deleteDist()
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -8,7 +10,6 @@ const glob = require('glob');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const Happypack = require('happypack')
-const config = require('./config/config.js')
 const AddFavIcoPlugin = require('./plugins/addFavIcoPlugin.js')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");//提取css到单独文件的插件
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
