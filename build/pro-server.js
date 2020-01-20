@@ -23,6 +23,6 @@ app.get('/*',function(req,res){
 
 
 
-app.listen('8888','127.0.0.1',function(){
+app.listen('7676','127.0.0.1',function(){
     console.log('dist代码启动成功');
 })
