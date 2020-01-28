@@ -4,7 +4,6 @@
 let argv = require('yargs').argv
 let fs = require('fs')
 let colors = require('colors/safe');
-let deleteDist = require('../task/deleteDist')
 let path = require('path')
 
 let config = {
@@ -12,8 +11,8 @@ let config = {
     mainDir:!argv.design?'../src':'../design',
     project:'project',
     dist:'dist',
-    port:'9999',
-    designPort:'8181',
+    port:'7878',
+    designPort:'7979',
     apps:['portal'],
     host:'127.0.0.1',
     dev:{
@@ -21,16 +20,19 @@ let config = {
     },
     build:{
         publicPath:'/'
+    },
+    proxyList : {
+        '/actions': {
+            target: 'http://192.168.28.248:8080/'
+            // changeOrigin: false
+        },
+        '/socket.io': {
+            target: 'http://192.168.28.248:8080/'
+            // changeOrigin: false
+        }
     }
 }
 if(argv.design){
     config.port = config.designPort;
-}
-if(!argv.devdist){
-    deleteDist(config)
-}else{
-    if(argv.mode==='production'){
-        deleteDist(config)
-    }
 }
 module.exports = config

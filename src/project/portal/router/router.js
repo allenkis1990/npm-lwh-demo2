@@ -12,11 +12,10 @@ export default new VueRouter({
     mode: 'history',
     base: __dirname,
     routes: [
-        ...Routers,
         {
-            path: dev?'/portal':'/',
+            path: multiApp?'/portal':'/',
             redirect: function () {
-                if(dev){
+                if(multiApp){
                     return '/portal/home'
                 }else{
                     return '/home'
@@ -25,15 +24,16 @@ export default new VueRouter({
             name:'root',
             component: Root,
             children: [
+                ...Routers,
                 {
                     name: 'home',
                     path: 'home',
-                    component: () => import(/* webpackChunkName: "portal/chunk/home" */'@portal/views/home/home.vue')
+                    component: () => import(/* webpackChunkName: "chunk/home" */'@portal/views/home/home.vue')
                 },
                 {
                     name: 'test',
                     path: 'test',
-                    component: () => import(/* webpackChunkName: "portal/chunk/test" */'@portal/views/test/test.vue')
+                    component: () => import(/* webpackChunkName: "chunk/test" */'@portal/views/test/test.vue')
                 }
             ]
         }

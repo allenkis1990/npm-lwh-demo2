@@ -4,14 +4,19 @@
 
 const rimraf = require('rimraf');
 let vueMapper = require('./vueMapper')
-module.exports = function(config){
-    rimraf(config.dist, function (err) {
-        if(err){
-            console.log(err);
-        } else {
-            if(config.isDesign){
-                vueMapper(config.mainDir,config.project)
+let argv = require('yargs').argv
+const config = require('../config/config.js')
+module.exports = function(){
+    deleteDist()
+    function deleteDist(){
+        rimraf(config.dist, function (err) {
+            if(err){
+                console.log(err);
+            } else {
+                if(config.isDesign){
+                    vueMapper(config.mainDir,config.project)
+                }
             }
-        }
-    });
+        });
+    }
 }

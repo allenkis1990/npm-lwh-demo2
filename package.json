@@ -1,13 +1,12 @@
 {
   "name": "@liuweiheng19906666/lwh-demo2",
-  "version": "1.0.3",
-  "description": "",
+  "version": "1.0.8",
+  "description": "微服务其中一个小模块",
   "main": "src/mods/@lwh-demo2/index.js",
   "scripts": {
     "dev": "set NODE_ENV=development && node build/dev-server.js",
     "design": "set NODE_ENV=development && node build/dev-server.js --design",
-    "dev:dist": "set NODE_ENV=development && node build/pro-server.js --devdist",
-    "build:dist": "set NODE_ENV=production && webpack --mode production --config build/webpack.pro.config.js --devdist",
+    "dev:dist": "set NODE_ENV=development && node build/pro-server.js",
     "build": "set NODE_ENV=production && webpack --mode production --config build/webpack.pro.config.js"
   },
   "author": "",
