@@ -1,6 +1,6 @@
 {
   "name": "@liuweiheng19906666/lwh-demo2",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "微服务其中一个小模块",
   "main": "src/mods/@lwh-demo2/index.js",
   "scripts": {
